@@ -1,0 +1,94 @@
+body {
+  color: #485cbc;
+}
+
+.screen-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 78px);
+}
+
+/* INÍCIO: cores do sistema */
+
+.brainz-blue-bg {
+  background-color: #485cbc;
+}
+
+.brainz-blue-text {
+  color: #485cbc;
+}
+
+/* FIM: cores do sistema */
+
+/* INÍCIO: sobrescrevendo cores do bootstrap */
+/* mais simples do que compilar os scss visto que poucas */
+/* classes com cores são utilizadas */
+
+.btn-primary {
+  background-color: #485cbc;
+  border-color: #485cbc;
+}
+
+.btn-primary:hover {
+  background-color: #3a4a9e;
+  border-color: #3a4a9e;
+}
+
+.btn-primary:active {
+  background-color: #485cbc !important;
+  border-color: #485cbc !important;
+}
+
+.btn-outline-primary {
+  color: #485cbc;
+  border-color: #485cbc;
+}
+
+.btn-outline-primary:hover {
+  background-color: #485cbc;
+  border-color: #485cbc;
+}
+
+.btn-outline-primary:active {
+  background-color: #485cbc !important;
+  border-color: #485cbc !important;
+}
+
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+  background-color: #d43f53;
+  border-color: #d43f53;
+}
+
+/* FIM: sobrescrevendo cores do bootstrap */
+
+.raw-button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  appearance: none;
+}
