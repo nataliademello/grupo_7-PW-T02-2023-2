@@ -140,8 +140,9 @@ export const RotaPergunta: FC = () => {
   if (data === undefined) return <p>Erro ao carregar perguntas.</p>;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    //prevenir o comportamento padrao de submissao de formulario do navegador
     event.preventDefault();
-
+    //desabilita os cards das perguntas
     setEnviou(true);
 
     const respostas: string[] = [];
@@ -154,15 +155,15 @@ export const RotaPergunta: FC = () => {
     }
 
     if (data === undefined) return;
-
+    //verifica as respostas corretas marcadas pelo usuario
     const respostasCorretas = respostas.filter((resposta, indice) => {
       return resposta === atob(data[indice].correct_answer);
     });
 
     if (userStore.user === null) return;
-
+    //vai pegar o numero de respostas corretas e dps vai mostrar pro usuario
     setNumAcertos(respostasCorretas.length);
-
+    // salvar no firebase
     await aumentarPontuacaoDoUsuarioPorCategoria({
       identificadorCategoria: parseInt(identificadorCategoria || "0", 10),
       userId: userStore.user.uid,
@@ -217,13 +218,13 @@ export const RotaPergunta: FC = () => {
           <div className="d-flex justify-content-between gap-2 mt-4">
             <Botoes
               onReinicarQuiz={() => {
-                
+                //busca novas perguntas           
                 refetch();
-                
+                //vai resetar a variavel p/ false p/ habilitar os cards de pergunta novamente
                 setEnviou(false);
-                
+                //o numero de acertos vai reiniciar com 0
                 setNumAcertos(0);
-
+                //retira as marcacoes anteriores dos usuarios 
                 formRef.current?.reset();
               }}
               enviou={enviou}
