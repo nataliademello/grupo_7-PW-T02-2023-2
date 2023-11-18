@@ -5,7 +5,6 @@ import { findCategoriaByIdentificador } from "../data/categorias";
 import { useQuery } from "react-query";
 import { getPerguntasPorCategoria } from "../api";
 import shuffle from "lodash/shuffle";
-// import { Collapse, Modal } from "react-bootstrap";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import clsx from "clsx";
 import { aumentarPontuacaoDoUsuarioPorCategoria } from "../firebase/dataStore";

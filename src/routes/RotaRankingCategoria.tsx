@@ -14,7 +14,7 @@ import { Else, If, Then } from "react-if";
 export const RotaRankingCategoria: FC = () => {
   const userStore = useUserStore();
   const { identificadorCategoria } = useParams();
-  const { isLoading, data } = useQuery("rankingCategoria", async () => {
+  const { isLoading, data } = useQuery(`rankingCategoria-${identificadorCategoria}`, async () => {
     return {
       ranking: await getRankingPorCategoria(
         parseInt(identificadorCategoria || "0", 10),
