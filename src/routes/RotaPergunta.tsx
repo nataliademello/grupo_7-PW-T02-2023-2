@@ -141,10 +141,10 @@ export const RotaPergunta: FC = () => {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
     setEnviou(true);
 
     const respostas: string[] = [];
-
     for (let index = 1; index < 11; index++) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
@@ -217,9 +217,13 @@ export const RotaPergunta: FC = () => {
           <div className="d-flex justify-content-between gap-2 mt-4">
             <Botoes
               onReinicarQuiz={() => {
+                
                 refetch();
+                
                 setEnviou(false);
+                
                 setNumAcertos(0);
+
                 formRef.current?.reset();
               }}
               enviou={enviou}

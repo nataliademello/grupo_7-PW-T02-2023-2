@@ -7,8 +7,6 @@ import {
 import { ProtectedApp } from "../components/ProtectedApp.tsx";
 import { RotaCategorias } from "./RotaCategorias.tsx";
 import { RotaPergunta } from "./RotaPergunta.tsx";
-import { RotaFimQuiz } from "./RotaFimQuiz.tsx";
-import { RotaRespostas } from "./RotaRespostas.tsx";
 import { RotaRankingCategoria } from "./RotaRankingCategoria.tsx";
 import { Layout } from "../components/Layout.tsx";
 import { RotaLoginComGoogle } from "./RotaLoginComGoogle.tsx";
@@ -31,8 +29,6 @@ export const router = createBrowserRouter(
             }}
           />
           <Route path="perguntas/" element={<RotaPergunta />} />
-          <Route path="fim-quiz/" element={<RotaFimQuiz />} />
-          <Route path="respostas/" element={<RotaRespostas />} />
           <Route path="ranking/" element={<RotaRankingCategoria />} />
         </Route>
       </Route>

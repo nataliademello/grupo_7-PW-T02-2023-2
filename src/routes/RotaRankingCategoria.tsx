@@ -65,7 +65,7 @@ export const RotaRankingCategoria: FC = () => {
               )}
 
               <ol className="list-group">
-                {data.ranking.map((v, indice) => {
+                {data.ranking.map((u, indice) => {
                   return (
                     <li
                       key={indice}
@@ -73,10 +73,10 @@ export const RotaRankingCategoria: FC = () => {
                     >
                       <div>
                         <span className="fw-bold">{indice + 1}. </span>
-                        {v.nome} ({v.pontuacao} pontos)
+                        {u.nome} ({u.pontuacao} pontos)
                       </div>
 
-                      {v.id === userStore.user?.uid && (
+                      {u.id === userStore.user?.uid && (
                         <span className="badge bg-primary rounded-pill">
                           Você!
                         </span>
