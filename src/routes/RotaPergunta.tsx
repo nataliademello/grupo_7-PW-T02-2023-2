@@ -4,7 +4,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { findCategoriaByIdentificador } from "../data/categorias";
 import { useQuery } from "react-query";
 import { getPerguntasPorCategoria } from "../api";
-import shuffle from "lodash/shuffle";
+import sortBy from "lodash/sortBy";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import clsx from "clsx";
 import { aumentarPontuacaoDoUsuarioPorCategoria } from "../firebase/dataStore";
@@ -194,7 +194,7 @@ export const RotaPergunta: FC = () => {
         <form ref={formRef} onSubmit={handleSubmit}>
           <div className="row row-cols-1 row-cols-md-2 g-4">
             {data.map((pergunta, indice) => {
-              const opcoes = shuffle([
+              const opcoes = sortBy([
                 ...pergunta.incorrect_answers,
                 pergunta.correct_answer,
               ]);
