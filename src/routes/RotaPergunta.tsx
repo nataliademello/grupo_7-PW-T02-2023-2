@@ -35,11 +35,14 @@ const CardPergunta: FC<PropsPergunta> = (props) => {
 
         <div className="card-text">
           {props.opcoes.map((opcao, indice) => {
+            const inputRef = useRef<HTMLInputElement>(null);
+
             return (
               <div key={indice} className="form-check">
                 <input
                   required
                   disabled={props.desabilitado}
+                  ref={inputRef}
                   className="form-check-input"
                   type="radio"
                   name={"respostaPergunta" + props.numero}
@@ -52,6 +55,10 @@ const CardPergunta: FC<PropsPergunta> = (props) => {
                     props.desabilitado &&
                       props.opcaoCorreta === opcao &&
                       "text-success",
+                    props.desabilitado &&
+                      props.opcaoCorreta !== opcao &&
+                      inputRef.current?.checked &&
+                      "text-danger"
                   )}
                   htmlFor={"respostaPergunta" + props.numero + "" + indice}
                 >
