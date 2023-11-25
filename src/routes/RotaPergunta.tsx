@@ -220,7 +220,7 @@ export const RotaPergunta: FC = () => {
             })}
           </div>
 
-          {enviou && <p>Você acertou {numAcertos} de 10.</p>}
+          {enviou && <p className="text-end fs-1 fw-bold">Você acertou {numAcertos} de 10!</p>}
 
           <div className="d-flex justify-content-between gap-2 mt-4">
             <Botoes
